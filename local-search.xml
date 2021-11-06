@@ -4,17 +4,17 @@
   
   
   <entry>
-    <title>new article</title>
-    <link href="/2021/09/16/new-article/"/>
-    <url>/2021/09/16/new-article/</url>
+    <title>some memory</title>
+    <link href="/2021/09/16/%E5%90%A7%E5%94%A7/"/>
+    <url>/2021/09/16/%E5%90%A7%E5%94%A7/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs php">ROIS web first easyphp<br><span class="hljs-meta">&lt;?php</span><br>    <span class="hljs-variable">$class</span>=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&#x27;system cat /flag&#x27;</span>);<br>    <span class="hljs-keyword">echo</span> <span class="hljs-variable">$class</span>;<br>    <span class="hljs-keyword">echo</span> <span class="hljs-string">&#x27;------&#x27;</span>;<br>    <span class="hljs-variable">$str1</span>=substr(<span class="hljs-variable">$class</span>,<span class="hljs-number">7</span>,<span class="hljs-number">6</span>);<br>    <span class="hljs-variable">$str2</span>=substr(<span class="hljs-variable">$class</span>,<span class="hljs-number">14</span>,<span class="hljs-number">9</span>);<br><span class="hljs-comment">//    $c=&quot;system&quot;;</span><br><span class="hljs-comment">//    $d=&quot;ipconfig&quot;;</span><br><span class="hljs-comment">//    $c($d);</span><br><span class="hljs-comment">//    var_dump($c);</span><br><span class="hljs-comment">//    var_dump($str1);</span><br>    <span class="hljs-variable">$str1</span>(<span class="hljs-variable">$str2</span>);<br><span class="hljs-comment">//$a = &#x27;system&#x27;;</span><br><span class="hljs-comment">//    (&#x27;system&#x27;)(&#x27;ipconfig&#x27;);</span><br></code></pre></td></tr></table></figure><p><a href="https://segmentfault.com/a/1190000018991087">php伪协议</a></p><p>preg_replace()：</p><p>函数最后以/e结尾时，会存在命令执行漏洞，也就是说如果有/e，并且匹配到符合正则表达式的字符串，那么第二个参数的字符串将被当做代码来执行</p>]]></content>
     
     
     
     <tags>
       
-      <tag>-这是个新blog我哦我我</tag>
+      <tag>-一个记录的flag</tag>
       
     </tags>
     
