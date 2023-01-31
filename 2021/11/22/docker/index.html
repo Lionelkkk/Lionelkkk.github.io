@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="lionel">
+  <meta name="keywords" content="">
+  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker">
+<meta property="og:url" content="http://example.com/2021/11/22/docker/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110210">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-11-22T09:07:56.000Z">
+<meta property="article:modified_time" content="2023-01-31T08:33:41.744Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="just a little">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>docker - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="docker">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-11-22 17:07" pubdate>
+        November 22, 2021 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      11k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">docker</h1>
+            
+            <div class="markdown-body">
+              <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br></pre></td><td class="code"><pre><code class="hljs bash">帮助文档<br><br>docker version     <span class="hljs-comment">#显示docker版本</span><br>docker info		   <span class="hljs-comment">#显示docker的系统信息，包括镜像和容器的数量</span><br>docker 命令 --<span class="hljs-built_in">help</span>  <span class="hljs-comment">#帮助命令</span><br>镜像命令<br><br>docker images 查看所有本地的主机上的镜像<br><br>[root@kai kai]<span class="hljs-comment"># docker images</span><br>REPOSITORY                     TAG                 IMAGE ID            CREATED                 SIZE<br>docker.io/c0ny1/upload-labs    latest              aa4fdd1dd211        3 years a    go         472 MB<br>docker.io/acgpiano/sqli-labs   latest              0976afc45249        6 years a    go         434 MB<br><span class="hljs-comment"># REPOSITORY 镜像的仓库源，TAG镜像的标签 </span><br> -a, --all              Show all images (default hides intermediate images)<br> -q, --quiet            Only show numeric IDs<span class="hljs-comment">#只显示id</span><br>docker search 搜索镜像<br><br>[root@kai kai]<span class="hljs-comment"># docker search mysql</span><br>INDEX       NAME                                        DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED<br>docker.io   docker.io/mysql                             MySQL is a widely used, open-source relati...   12103     [OK]<br>docker.io   docker.io/mariadb                           MariaDB Server is a high performing open s...   4636      [OK]<br>docker.io   docker.io/mysql/mysql-server                Optimized MySQL Server Docker images. Crea...   905                  [OK]<br>docker.io   docker.io/centos/mysql-57-centos7           MySQL 5.7 SQL database serve<br><br>--filter=STARS=3000  可选项，过滤搜索<br>docker pull 镜像名[:tags]  ---&gt;下载镜像  tags:选版本，默认latest<br>docker 使用分层下载，若下载同类其他版本，不同版本的相同层次文件不会重复下载，可以共用<br><br>docker rmi 镜像名 删除镜像<br><br>docker rmi -f 镜像id ---&gt;删除指定容器<br>docker rmi -f 镜像id 镜像id 镜像id---&gt;删除多个容器<br>docker rmi -f $(docker images -aq)  ---&gt;linux命令批量删除所有镜像<br><br>容器命令<br><br>有了镜像才可以创建容器，linux,下载一个centos<br><br>docker pull centos<br>新建容器并启动<br><br>docker run [可选参数] image<br><span class="hljs-comment">#参数说明</span><br>--name=<span class="hljs-string">&quot;Name&quot;</span>  --&gt;容器名字 tomcat1 tomcat2 用来区分容器<br>-d             --&gt;后台运行方式<br>-it            --&gt;使用交互方式运行，进入容器查看内容<br>-p <br>	-p 主机端口: 容器端口<br>	-p 容器端口<br>-P             --&gt;随即指定端口<br><span class="hljs-comment">#测试，启动并进入容器</span><br>[root@kai kai]<span class="hljs-comment"># docker run -it centos /bin/bash</span><br>[root@64b9ef6846ef /]<span class="hljs-comment"># ls    #查看容器内的centos，基础版本，很多命令不完善</span><br>bin  etc   lib    lost+found  mnt  proc  run   srv  tmp  var<br>dev  home  lib64  media       opt  root  sbin  sys  usr<br><br><span class="hljs-built_in">exit</span>  <span class="hljs-comment">#退出centos容器，容器停止并退出</span><br><br>Ctrl + p +q <span class="hljs-comment">#容器不停止退出 </span><br><br><br>列出所有的运行的容器<br><br>docker ps<br>     <span class="hljs-comment">#列出当前正在运行的容器</span><br>-a   <span class="hljs-comment">#列出当前正在运行的容器+带出历史运行的容器</span><br>-n=? <span class="hljs-comment">#显示最近创建的容器</span><br>-q   <span class="hljs-comment">#只显示的编号</span><br>[root@kai kai]<span class="hljs-comment"># docker ps</span><br>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES<br>[root@kai kai]<span class="hljs-comment"># docker ps -a</span><br>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                        PORTS               NAMES<br>64b9ef6846ef        centos              <span class="hljs-string">&quot;/bin/bash&quot;</span>         2 minutes ago       Exited (130) 27 seconds ago                       jovial_curran<br><br>删除容器<br><br>docker rm 容器id           <span class="hljs-comment">#删除指定容器，不能删除正在运行的容器，若强制，则rm -f</span><br>docker rm -f $(docker ps -aq)  <span class="hljs-comment">#删除所有容器</span><br>docker ps -a -q|xargs docker rm <span class="hljs-comment">#删除所有的容器</span><br>启动和停止容器的操作<br><br>docker start 容器id    <span class="hljs-comment">#启动容器</span><br>docker restart 容器id  <span class="hljs-comment">#重启容器</span><br>docker stop 容器id     <span class="hljs-comment">#停止当前正在运行的容器</span><br>docker <span class="hljs-built_in">kill</span> 容器id     <span class="hljs-comment">#强制停止当前容器</span><br>后台启动<br><br>docker run -d 镜像名<br><br>docker run -d centos<br><span class="hljs-comment">#docker ps 发现centos停止了</span><br><span class="hljs-comment">#坑，docker容器使用后台运行，那必须要有一个前台进程，docker发现没有应用，就会自动停止</span><br><span class="hljs-comment">#nginx，容器启动后，发现自己没有提供应用服务，就会自动停止了，就是没有程序了</span><br>日志<br><br>docker logs --<span class="hljs-built_in">help</span>   <br>      --details        Show extra details provided to logs<br>  -f, --follow         Follow <span class="hljs-built_in">log</span> output<br>      --<span class="hljs-built_in">help</span>           Print usage<br>      --since string   Show logs since timestamp<br>      --tail string    Number of lines to show from the end of the logs (default <span class="hljs-string">&quot;all&quot;</span>)<br>  -t, --timestamps     Show timestamps<br><br>docker logs -f -t --tail 容器<br><span class="hljs-comment">#显示日志</span><br>-tf			<span class="hljs-comment">#显示日志</span><br>--tail number  <span class="hljs-comment">#要显示日志条数</span><br>[root@kai kai]<span class="hljs-comment"># docker logs -ft --tail 10 aa4fdd1dd211</span><br><br>查看容器中的进程信息<br><br>docker top 容器id<br>[root@kai kai]<span class="hljs-comment"># docker top b9c6c69111ea</span><br>UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD<br>root                9247                9231                0                   14:38               pts/0               00:00:00            /bin/bash<br><br><br>查看镜像元数据<br><br>docker inspect --<span class="hljs-built_in">help</span><br>  -f, --format string   Format the output using the given Go template<br>      --<span class="hljs-built_in">help</span>            Print usage<br>  -s, --size            Display total file sizes <span class="hljs-keyword">if</span> the <span class="hljs-built_in">type</span> is container<br>      --<span class="hljs-built_in">type</span> string     Return JSON <span class="hljs-keyword">for</span> specified <span class="hljs-built_in">type</span><br><br>docker inspect 容器id<br>[root@kai kai]<span class="hljs-comment"># docker inspect b9c6c69111ea</span><br>[<br>    &#123;<br>        <span class="hljs-string">&quot;Id&quot;</span>: <span class="hljs-string">&quot;b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a&quot;</span>,<br>        <span class="hljs-string">&quot;Created&quot;</span>: <span class="hljs-string">&quot;2022-02-12T06:38:46.946062314Z&quot;</span>,<br>        <span class="hljs-string">&quot;Path&quot;</span>: <span class="hljs-string">&quot;/bin/bash&quot;</span>,<br>        <span class="hljs-string">&quot;Args&quot;</span>: [],<br>        <span class="hljs-string">&quot;State&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;Status&quot;</span>: <span class="hljs-string">&quot;running&quot;</span>,<br>            <span class="hljs-string">&quot;Running&quot;</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-string">&quot;Paused&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;Restarting&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;OOMKilled&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;Dead&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;Pid&quot;</span>: 9247,<br>            <span class="hljs-string">&quot;ExitCode&quot;</span>: 0,<br>            <span class="hljs-string">&quot;Error&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;StartedAt&quot;</span>: <span class="hljs-string">&quot;2022-02-12T06:38:47.157542668Z&quot;</span>,<br>            <span class="hljs-string">&quot;FinishedAt&quot;</span>: <span class="hljs-string">&quot;0001-01-01T00:00:00Z&quot;</span><br>        &#125;,<br>        <span class="hljs-string">&quot;Image&quot;</span>: <span class="hljs-string">&quot;sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6&quot;</span>,<br>        <span class="hljs-string">&quot;ResolvConfPath&quot;</span>: <span class="hljs-string">&quot;/var/lib/docker/containers/b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a/resolv.conf&quot;</span>,<br>        <span class="hljs-string">&quot;HostnamePath&quot;</span>: <span class="hljs-string">&quot;/var/lib/docker/containers/b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a/hostname&quot;</span>,<br>        <span class="hljs-string">&quot;HostsPath&quot;</span>: <span class="hljs-string">&quot;/var/lib/docker/containers/b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a/hosts&quot;</span>,<br>        <span class="hljs-string">&quot;LogPath&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;Name&quot;</span>: <span class="hljs-string">&quot;/competent_murdock&quot;</span>,<br>        <span class="hljs-string">&quot;RestartCount&quot;</span>: 0,<br>        <span class="hljs-string">&quot;Driver&quot;</span>: <span class="hljs-string">&quot;overlay2&quot;</span>,<br>        <span class="hljs-string">&quot;MountLabel&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;ProcessLabel&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;AppArmorProfile&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>        <span class="hljs-string">&quot;ExecIDs&quot;</span>: null,<br>        <span class="hljs-string">&quot;HostConfig&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;Binds&quot;</span>: null,<br>            <span class="hljs-string">&quot;ContainerIDFile&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;LogConfig&quot;</span>: &#123;<br>                <span class="hljs-string">&quot;Type&quot;</span>: <span class="hljs-string">&quot;journald&quot;</span>,<br>                <span class="hljs-string">&quot;Config&quot;</span>: &#123;&#125;<br>            &#125;,<br>            <span class="hljs-string">&quot;NetworkMode&quot;</span>: <span class="hljs-string">&quot;default&quot;</span>,<br>            <span class="hljs-string">&quot;PortBindings&quot;</span>: &#123;&#125;,<br>            <span class="hljs-string">&quot;RestartPolicy&quot;</span>: &#123;<br>                <span class="hljs-string">&quot;Name&quot;</span>: <span class="hljs-string">&quot;no&quot;</span>,<br>                <span class="hljs-string">&quot;MaximumRetryCount&quot;</span>: 0<br>            &#125;,<br>            <span class="hljs-string">&quot;AutoRemove&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;VolumeDriver&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;VolumesFrom&quot;</span>: null,<br>            <span class="hljs-string">&quot;CapAdd&quot;</span>: null,<br>            <span class="hljs-string">&quot;CapDrop&quot;</span>: null,<br>            <span class="hljs-string">&quot;Dns&quot;</span>: [],<br>            <span class="hljs-string">&quot;DnsOptions&quot;</span>: [],<br>            <span class="hljs-string">&quot;DnsSearch&quot;</span>: [],<br>            <span class="hljs-string">&quot;ExtraHosts&quot;</span>: null,<br>            <span class="hljs-string">&quot;GroupAdd&quot;</span>: null,<br>            <span class="hljs-string">&quot;IpcMode&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;Cgroup&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;Links&quot;</span>: null,<br>            <span class="hljs-string">&quot;OomScoreAdj&quot;</span>: 0,<br>            <span class="hljs-string">&quot;PidMode&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;Privileged&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;PublishAllPorts&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;ReadonlyRootfs&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;SecurityOpt&quot;</span>: null,<br>            <span class="hljs-string">&quot;UTSMode&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;UsernsMode&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;ShmSize&quot;</span>: 67108864,<br>            <span class="hljs-string">&quot;Runtime&quot;</span>: <span class="hljs-string">&quot;docker-runc&quot;</span>,<br>            <span class="hljs-string">&quot;ConsoleSize&quot;</span>: [<br>                0,<br>                0<br>            ],<br>            <span class="hljs-string">&quot;Isolation&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;CpuShares&quot;</span>: 0,<br>            <span class="hljs-string">&quot;Memory&quot;</span>: 0,<br>            <span class="hljs-string">&quot;NanoCpus&quot;</span>: 0,<br>            <span class="hljs-string">&quot;CgroupParent&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;BlkioWeight&quot;</span>: 0,<br>            <span class="hljs-string">&quot;BlkioWeightDevice&quot;</span>: null,<br>            <span class="hljs-string">&quot;BlkioDeviceReadBps&quot;</span>: null,<br>            <span class="hljs-string">&quot;BlkioDeviceWriteBps&quot;</span>: null,<br>            <span class="hljs-string">&quot;BlkioDeviceReadIOps&quot;</span>: null,<br>            <span class="hljs-string">&quot;BlkioDeviceWriteIOps&quot;</span>: null,<br>            <span class="hljs-string">&quot;CpuPeriod&quot;</span>: 0,<br>            <span class="hljs-string">&quot;CpuQuota&quot;</span>: 0,<br>            <span class="hljs-string">&quot;CpuRealtimePeriod&quot;</span>: 0,<br>            <span class="hljs-string">&quot;CpuRealtimeRuntime&quot;</span>: 0,<br>            <span class="hljs-string">&quot;CpusetCpus&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;CpusetMems&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;Devices&quot;</span>: [],<br>            <span class="hljs-string">&quot;DiskQuota&quot;</span>: 0,<br>            <span class="hljs-string">&quot;KernelMemory&quot;</span>: 0,<br>            <span class="hljs-string">&quot;MemoryReservation&quot;</span>: 0,<br>            <span class="hljs-string">&quot;MemorySwap&quot;</span>: 0,<br>            <span class="hljs-string">&quot;MemorySwappiness&quot;</span>: -1,<br>            <span class="hljs-string">&quot;OomKillDisable&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;PidsLimit&quot;</span>: 0,<br>            <span class="hljs-string">&quot;Ulimits&quot;</span>: null,<br>            <span class="hljs-string">&quot;CpuCount&quot;</span>: 0,<br>            <span class="hljs-string">&quot;CpuPercent&quot;</span>: 0,<br>            <span class="hljs-string">&quot;IOMaximumIOps&quot;</span>: 0,<br>            <span class="hljs-string">&quot;IOMaximumBandwidth&quot;</span>: 0<br>        &#125;,<br>        <span class="hljs-string">&quot;GraphDriver&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;Name&quot;</span>: <span class="hljs-string">&quot;overlay2&quot;</span>,<br>            <span class="hljs-string">&quot;Data&quot;</span>: &#123;<br>                <span class="hljs-string">&quot;LowerDir&quot;</span>: <span class="hljs-string">&quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2-init/diff:/var/lib/docker/overlay2/c929098156597e7fde875733d39d592621785358a02b2476b4fb863e1318348a/diff&quot;</span>,<br>                <span class="hljs-string">&quot;MergedDir&quot;</span>: <span class="hljs-string">&quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2/merged&quot;</span>,<br>                <span class="hljs-string">&quot;UpperDir&quot;</span>: <span class="hljs-string">&quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2/diff&quot;</span>,<br>                <span class="hljs-string">&quot;WorkDir&quot;</span>: <span class="hljs-string">&quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2/work&quot;</span><br>            &#125;<br>        &#125;,<br>        <span class="hljs-string">&quot;Mounts&quot;</span>: [],<br>        <span class="hljs-string">&quot;Config&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;Hostname&quot;</span>: <span class="hljs-string">&quot;b9c6c69111ea&quot;</span>,<br>            <span class="hljs-string">&quot;Domainname&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;User&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;AttachStdin&quot;</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-string">&quot;AttachStdout&quot;</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-string">&quot;AttachStderr&quot;</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-string">&quot;Tty&quot;</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-string">&quot;OpenStdin&quot;</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-string">&quot;StdinOnce&quot;</span>: <span class="hljs-literal">true</span>,<br>            <span class="hljs-string">&quot;Env&quot;</span>: [<br>                <span class="hljs-string">&quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;</span><br>            ],<br>            <span class="hljs-string">&quot;Cmd&quot;</span>: [<br>                <span class="hljs-string">&quot;/bin/bash&quot;</span><br>            ],<br>            <span class="hljs-string">&quot;Image&quot;</span>: <span class="hljs-string">&quot;centos&quot;</span>,<br>            <span class="hljs-string">&quot;Volumes&quot;</span>: null,<br>            <span class="hljs-string">&quot;WorkingDir&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;Entrypoint&quot;</span>: null,<br>            <span class="hljs-string">&quot;OnBuild&quot;</span>: null,<br>            <span class="hljs-string">&quot;Labels&quot;</span>: &#123;<br>                <span class="hljs-string">&quot;org.label-schema.build-date&quot;</span>: <span class="hljs-string">&quot;20210915&quot;</span>,<br>                <span class="hljs-string">&quot;org.label-schema.license&quot;</span>: <span class="hljs-string">&quot;GPLv2&quot;</span>,<br>                <span class="hljs-string">&quot;org.label-schema.name&quot;</span>: <span class="hljs-string">&quot;CentOS Base Image&quot;</span>,<br>                <span class="hljs-string">&quot;org.label-schema.schema-version&quot;</span>: <span class="hljs-string">&quot;1.0&quot;</span>,<br>                <span class="hljs-string">&quot;org.label-schema.vendor&quot;</span>: <span class="hljs-string">&quot;CentOS&quot;</span><br>            &#125;<br>        &#125;,<br>        <span class="hljs-string">&quot;NetworkSettings&quot;</span>: &#123;<br>            <span class="hljs-string">&quot;Bridge&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;SandboxID&quot;</span>: <span class="hljs-string">&quot;96c5a049392ff3080acd7c87435235324bedd58ce9d60d7ae40b7a575d0530fb&quot;</span>,<br>            <span class="hljs-string">&quot;HairpinMode&quot;</span>: <span class="hljs-literal">false</span>,<br>            <span class="hljs-string">&quot;LinkLocalIPv6Address&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;LinkLocalIPv6PrefixLen&quot;</span>: 0,<br>            <span class="hljs-string">&quot;Ports&quot;</span>: &#123;&#125;,<br>            <span class="hljs-string">&quot;SandboxKey&quot;</span>: <span class="hljs-string">&quot;/var/run/docker/netns/96c5a049392f&quot;</span>,<br>            <span class="hljs-string">&quot;SecondaryIPAddresses&quot;</span>: null,<br>            <span class="hljs-string">&quot;SecondaryIPv6Addresses&quot;</span>: null,<br>            <span class="hljs-string">&quot;EndpointID&quot;</span>: <span class="hljs-string">&quot;2713bfadd8c713125a5b3c8115158fa5c1f5d9134ad6400351fe72eedc22e500&quot;</span>,<br>            <span class="hljs-string">&quot;Gateway&quot;</span>: <span class="hljs-string">&quot;172.17.0.1&quot;</span>,<br>            <span class="hljs-string">&quot;GlobalIPv6Address&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;GlobalIPv6PrefixLen&quot;</span>: 0,<br>            <span class="hljs-string">&quot;IPAddress&quot;</span>: <span class="hljs-string">&quot;172.17.0.2&quot;</span>,<br>            <span class="hljs-string">&quot;IPPrefixLen&quot;</span>: 16,<br>            <span class="hljs-string">&quot;IPv6Gateway&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>            <span class="hljs-string">&quot;MacAddress&quot;</span>: <span class="hljs-string">&quot;02:42:ac:11:00:02&quot;</span>,<br>            <span class="hljs-string">&quot;Networks&quot;</span>: &#123;<br>                <span class="hljs-string">&quot;bridge&quot;</span>: &#123;<br>                    <span class="hljs-string">&quot;IPAMConfig&quot;</span>: null,<br>                    <span class="hljs-string">&quot;Links&quot;</span>: null,<br>                    <span class="hljs-string">&quot;Aliases&quot;</span>: null,<br>                    <span class="hljs-string">&quot;NetworkID&quot;</span>: <span class="hljs-string">&quot;10a22f71f8cdb181a3acf67565fa30a3cadba845ee032ec0e167e8a1d603612b&quot;</span>,<br>                    <span class="hljs-string">&quot;EndpointID&quot;</span>: <span class="hljs-string">&quot;2713bfadd8c713125a5b3c8115158fa5c1f5d9134ad6400351fe72eedc22e500&quot;</span>,<br>                    <span class="hljs-string">&quot;Gateway&quot;</span>: <span class="hljs-string">&quot;172.17.0.1&quot;</span>,<br>                    <span class="hljs-string">&quot;IPAddress&quot;</span>: <span class="hljs-string">&quot;172.17.0.2&quot;</span>,<br>                    <span class="hljs-string">&quot;IPPrefixLen&quot;</span>: 16,<br>                    <span class="hljs-string">&quot;IPv6Gateway&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>                    <span class="hljs-string">&quot;GlobalIPv6Address&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>                    <span class="hljs-string">&quot;GlobalIPv6PrefixLen&quot;</span>: 0,<br>                    <span class="hljs-string">&quot;MacAddress&quot;</span>: <span class="hljs-string">&quot;02:42:ac:11:00:02&quot;</span><br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>]<br><br>进入当前正在运行的容器<br><span class="hljs-comment">#容器后台运行，需要进入容器，修改一些配置</span><br><br><span class="hljs-comment">#命令</span><br>docker <span class="hljs-built_in">exec</span> -it 容器id bashshell<br>-----&gt;进入容器后开启一个新的终端<br><br>docker attach 容器id<br>-----&gt;进入容器正在执行的终端，不会启动新的进程<br><br>从容器内拷贝文件到主机上<br><br>docker cp 容器id:/容器内路径 目的主机路径<br><br>[root@kai kai]<span class="hljs-comment"># docker run -it centos /bin/bash</span><br><br><span class="hljs-comment">#查看容器当前目录</span><br>[root@3ab96e4a355c /]<span class="hljs-comment"># ls</span><br>bin  etc   lib    lost+found  mnt  proc  run   srv  tmp  var<br>dev  home  lib64  media       opt  root  sbin  sys  usr<br>[root@3ab96e4a355c /]<span class="hljs-comment"># cd home</span><br>[root@3ab96e4a355c home]<span class="hljs-comment"># ls</span><br><br><span class="hljs-comment">#创建容器文件</span><br>[root@3ab96e4a355c home]<span class="hljs-comment"># touch test.py</span><br>[root@3ab96e4a355c home]<span class="hljs-comment"># exit</span><br><span class="hljs-built_in">exit</span><br>[root@kai kai]<span class="hljs-comment"># docker ps -a</span><br>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES<br>3ab96e4a355c        centos              <span class="hljs-string">&quot;/bin/bash&quot;</span>         40 seconds ago      Exited (0) 6 seconds ago                        vibrant_mclean<br><br><span class="hljs-comment">#复制，使用复制命令时，不用关心容器是否开启</span><br>[root@kai kai]<span class="hljs-comment"># docker cp 3ab96e4a355c:/home/test.py ./</span><br>[root@kai kai]<span class="hljs-comment"># ls</span><br>Desktop    Downloads  Pictures  Templates  testcp.txt  Videos<br>Documents  Music      Public    test1.txt  test.py<br><br><br></code></pre></td></tr></table></figure>
+
+
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/self-study/">self study</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/just-a-little/">just a little</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/22/flask/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">flask study</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/16/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
