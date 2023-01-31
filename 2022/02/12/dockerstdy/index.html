@@ -1,0 +1,493 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  <meta name="description" content="帮助文档 123docker version     #显示docker版本docker info		   #显示docker的系统信息，包括镜像和容器的数量docker 命令 --help  #帮助命令  镜像命令 docker images   查看所有本地的主机上的镜像 1234567[root@kai kai]# docker imagesREPOSITORY">
+<meta property="og:type" content="article">
+<meta property="og:title" content="dockerstdy">
+<meta property="og:url" content="http://example.com/2022/02/12/dockerstdy/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="帮助文档 123docker version     #显示docker版本docker info		   #显示docker的系统信息，包括镜像和容器的数量docker 命令 --help  #帮助命令  镜像命令 docker images   查看所有本地的主机上的镜像 1234567[root@kai kai]# docker imagesREPOSITORY">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-12T05:08:55.000Z">
+<meta property="article:modified_time" content="2023-01-31T07:59:17.056Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="study">
+<meta name="twitter:card" content="summary_large_image">
+  
+  <title>dockerstdy - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.12","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname"}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                Home
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                Archives
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                Categories
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                Tags
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                About
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="dockerstdy">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-02-12 13:08" pubdate>
+        February 12, 2022 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      11k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      34 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">dockerstdy</h1>
+            
+            <div class="markdown-body">
+              <p><strong>帮助文档</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker version     #显示docker版本<br>docker info		   #显示docker的系统信息，包括镜像和容器的数量<br>docker 命令 --help  #帮助命令<br></code></pre></td></tr></table></figure>
+
+<p><strong>镜像命令</strong></p>
+<p>docker images   查看所有本地的主机上的镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@kai kai]# docker images<br>REPOSITORY                     TAG                 IMAGE ID            CREATED                 SIZE<br>docker.io/c0ny1/upload-labs    latest              aa4fdd1dd211        3 years a    go         472 MB<br>docker.io/acgpiano/sqli-labs   latest              0976afc45249        6 years a    go         434 MB<br><span class="hljs-meta">#</span><span class="bash"> REPOSITORY 镜像的仓库源，TAG镜像的标签</span> <br> -a, --all              Show all images (default hides intermediate images)<br> -q, --quiet            Only show numeric IDs#只显示id<br></code></pre></td></tr></table></figure>
+
+<p>docker search     搜索镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">[root@kai kai]# docker search mysql<br>INDEX       NAME                                        DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED<br>docker.io   docker.io/mysql                             MySQL is a widely used, open-source relati...   12103     [OK]<br>docker.io   docker.io/mariadb                           MariaDB Server is a high performing open s...   4636      [OK]<br>docker.io   docker.io/mysql/mysql-server                Optimized MySQL Server Docker images. Crea...   905                  [OK]<br>docker.io   docker.io/centos/mysql-57-centos7           MySQL 5.7 SQL database serve<br><br>--filter=STARS=3000  可选项，过滤搜索<br>docker pull 镜像名[:tags]  ---&gt;下载镜像  tags:选版本，默认latest<br>docker 使用分层下载，若下载同类其他版本，不同版本的相同层次文件不会重复下载，可以共用<br><br></code></pre></td></tr></table></figure>
+
+<p>docker rmi 镜像名   删除镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker rmi -f 镜像id ---&gt;删除指定容器<br>docker rmi -f 镜像id 镜像id 镜像id---&gt;删除多个容器<br>docker rmi -f $(docker images -aq)  ---&gt;linux命令批量删除所有镜像<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>容器命令</strong></p>
+<p>有了镜像才可以创建容器，linux,下载一个centos</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker pull centos<br></code></pre></td></tr></table></figure>
+
+<p>新建容器并启动</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run [可选参数] image<br><span class="hljs-meta">#</span><span class="bash">参数说明</span><br>--name=&quot;Name&quot;  --&gt;容器名字 tomcat1 tomcat2 用来区分容器<br>-d             --&gt;后台运行方式<br>-it            --&gt;使用交互方式运行，进入容器查看内容<br>-p <br>	-p 主机端口: 容器端口<br>	-p 容器端口<br>-P             --&gt;随即指定端口<br><span class="hljs-meta">#</span><span class="bash">测试，启动并进入容器</span><br>[root@kai kai]# docker run -it centos /bin/bash<br>[root@64b9ef6846ef /]# ls    #查看容器内的centos，基础版本，很多命令不完善<br>bin  etc   lib    lost+found  mnt  proc  run   srv  tmp  var<br>dev  home  lib64  media       opt  root  sbin  sys  usr<br><br>exit  #退出centos容器，容器停止并退出<br><br>Ctrl + p +q #容器不停止退出 <br><br><br></code></pre></td></tr></table></figure>
+
+<p><strong>列出所有的运行的容器</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker ps<br>     #列出当前正在运行的容器<br>-a   #列出当前正在运行的容器+带出历史运行的容器<br>-n=? #显示最近创建的容器<br>-q   #只显示的编号<br>[root@kai kai]# docker ps<br>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES<br>[root@kai kai]# docker ps -a<br>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                        PORTS               NAMES<br>64b9ef6846ef        centos              &quot;/bin/bash&quot;         2 minutes ago       Exited (130) 27 seconds ago                       jovial_curran<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>删除容器</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker rm 容器id           #删除指定容器，不能删除正在运行的容器，若强制，则rm -f<br>docker rm -f $(docker ps -aq)  #删除所有容器<br>docker ps -a -q|xargs docker rm #删除所有的容器<br></code></pre></td></tr></table></figure>
+
+<p><strong>启动和停止容器的操作</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker start 容器id    #启动容器<br>docker restart 容器id  #重启容器<br>docker stop 容器id     #停止当前正在运行的容器<br>docker kill 容器id     #强制停止当前容器<br></code></pre></td></tr></table></figure>
+
+<p><strong>后台启动</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker run -d 镜像名<br><br>docker run -d centos<br><span class="hljs-meta">#</span><span class="bash">docker ps 发现centos停止了</span><br><span class="hljs-meta">#</span><span class="bash">坑，docker容器使用后台运行，那必须要有一个前台进程，docker发现没有应用，就会自动停止</span><br><span class="hljs-meta">#</span><span class="bash">nginx，容器启动后，发现自己没有提供应用服务，就会自动停止了，就是没有程序了</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>日志</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker logs --help   <br>      --details        Show extra details provided to logs<br>  -f, --follow         Follow log output<br>      --help           Print usage<br>      --since string   Show logs since timestamp<br>      --tail string    Number of lines to show from the end of the logs (default &quot;all&quot;)<br>  -t, --timestamps     Show timestamps<br><br>docker logs -f -t --tail 容器<br><span class="hljs-meta">#</span><span class="bash">显示日志</span><br>-tf			#显示日志<br>--tail number  #要显示日志条数<br>[root@kai kai]# docker logs -ft --tail 10 aa4fdd1dd211<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>查看容器中的进程信息</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker top 容器id<br>[root@kai kai]# docker top b9c6c69111ea<br>UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD<br>root                9247                9231                0                   14:38               pts/0               00:00:00            /bin/bash<br><br><br></code></pre></td></tr></table></figure>
+
+<p><strong>查看镜像元数据</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker inspect --help<br>  -f, --format string   Format the output using the given Go template<br>      --help            Print usage<br>  -s, --size            Display total file sizes if the type is container<br>      --type string     Return JSON for specified type<br><br>docker inspect 容器id<br>[root@kai kai]# docker inspect b9c6c69111ea<br>[<br>    &#123;<br>        &quot;Id&quot;: &quot;b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a&quot;,<br>        &quot;Created&quot;: &quot;2022-02-12T06:38:46.946062314Z&quot;,<br>        &quot;Path&quot;: &quot;/bin/bash&quot;,<br>        &quot;Args&quot;: [],<br>        &quot;State&quot;: &#123;<br>            &quot;Status&quot;: &quot;running&quot;,<br>            &quot;Running&quot;: true,<br>            &quot;Paused&quot;: false,<br>            &quot;Restarting&quot;: false,<br>            &quot;OOMKilled&quot;: false,<br>            &quot;Dead&quot;: false,<br>            &quot;Pid&quot;: 9247,<br>            &quot;ExitCode&quot;: 0,<br>            &quot;Error&quot;: &quot;&quot;,<br>            &quot;StartedAt&quot;: &quot;2022-02-12T06:38:47.157542668Z&quot;,<br>            &quot;FinishedAt&quot;: &quot;0001-01-01T00:00:00Z&quot;<br>        &#125;,<br>        &quot;Image&quot;: &quot;sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6&quot;,<br>        &quot;ResolvConfPath&quot;: &quot;/var/lib/docker/containers/b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a/resolv.conf&quot;,<br>        &quot;HostnamePath&quot;: &quot;/var/lib/docker/containers/b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a/hostname&quot;,<br>        &quot;HostsPath&quot;: &quot;/var/lib/docker/containers/b9c6c69111ea5d0ccbf51296cef17922ae4e71500905933a415896dd5cfbc81a/hosts&quot;,<br>        &quot;LogPath&quot;: &quot;&quot;,<br>        &quot;Name&quot;: &quot;/competent_murdock&quot;,<br>        &quot;RestartCount&quot;: 0,<br>        &quot;Driver&quot;: &quot;overlay2&quot;,<br>        &quot;MountLabel&quot;: &quot;&quot;,<br>        &quot;ProcessLabel&quot;: &quot;&quot;,<br>        &quot;AppArmorProfile&quot;: &quot;&quot;,<br>        &quot;ExecIDs&quot;: null,<br>        &quot;HostConfig&quot;: &#123;<br>            &quot;Binds&quot;: null,<br>            &quot;ContainerIDFile&quot;: &quot;&quot;,<br>            &quot;LogConfig&quot;: &#123;<br>                &quot;Type&quot;: &quot;journald&quot;,<br>                &quot;Config&quot;: &#123;&#125;<br>            &#125;,<br>            &quot;NetworkMode&quot;: &quot;default&quot;,<br>            &quot;PortBindings&quot;: &#123;&#125;,<br>            &quot;RestartPolicy&quot;: &#123;<br>                &quot;Name&quot;: &quot;no&quot;,<br>                &quot;MaximumRetryCount&quot;: 0<br>            &#125;,<br>            &quot;AutoRemove&quot;: false,<br>            &quot;VolumeDriver&quot;: &quot;&quot;,<br>            &quot;VolumesFrom&quot;: null,<br>            &quot;CapAdd&quot;: null,<br>            &quot;CapDrop&quot;: null,<br>            &quot;Dns&quot;: [],<br>            &quot;DnsOptions&quot;: [],<br>            &quot;DnsSearch&quot;: [],<br>            &quot;ExtraHosts&quot;: null,<br>            &quot;GroupAdd&quot;: null,<br>            &quot;IpcMode&quot;: &quot;&quot;,<br>            &quot;Cgroup&quot;: &quot;&quot;,<br>            &quot;Links&quot;: null,<br>            &quot;OomScoreAdj&quot;: 0,<br>            &quot;PidMode&quot;: &quot;&quot;,<br>            &quot;Privileged&quot;: false,<br>            &quot;PublishAllPorts&quot;: false,<br>            &quot;ReadonlyRootfs&quot;: false,<br>            &quot;SecurityOpt&quot;: null,<br>            &quot;UTSMode&quot;: &quot;&quot;,<br>            &quot;UsernsMode&quot;: &quot;&quot;,<br>            &quot;ShmSize&quot;: 67108864,<br>            &quot;Runtime&quot;: &quot;docker-runc&quot;,<br>            &quot;ConsoleSize&quot;: [<br>                0,<br>                0<br>            ],<br>            &quot;Isolation&quot;: &quot;&quot;,<br>            &quot;CpuShares&quot;: 0,<br>            &quot;Memory&quot;: 0,<br>            &quot;NanoCpus&quot;: 0,<br>            &quot;CgroupParent&quot;: &quot;&quot;,<br>            &quot;BlkioWeight&quot;: 0,<br>            &quot;BlkioWeightDevice&quot;: null,<br>            &quot;BlkioDeviceReadBps&quot;: null,<br>            &quot;BlkioDeviceWriteBps&quot;: null,<br>            &quot;BlkioDeviceReadIOps&quot;: null,<br>            &quot;BlkioDeviceWriteIOps&quot;: null,<br>            &quot;CpuPeriod&quot;: 0,<br>            &quot;CpuQuota&quot;: 0,<br>            &quot;CpuRealtimePeriod&quot;: 0,<br>            &quot;CpuRealtimeRuntime&quot;: 0,<br>            &quot;CpusetCpus&quot;: &quot;&quot;,<br>            &quot;CpusetMems&quot;: &quot;&quot;,<br>            &quot;Devices&quot;: [],<br>            &quot;DiskQuota&quot;: 0,<br>            &quot;KernelMemory&quot;: 0,<br>            &quot;MemoryReservation&quot;: 0,<br>            &quot;MemorySwap&quot;: 0,<br>            &quot;MemorySwappiness&quot;: -1,<br>            &quot;OomKillDisable&quot;: false,<br>            &quot;PidsLimit&quot;: 0,<br>            &quot;Ulimits&quot;: null,<br>            &quot;CpuCount&quot;: 0,<br>            &quot;CpuPercent&quot;: 0,<br>            &quot;IOMaximumIOps&quot;: 0,<br>            &quot;IOMaximumBandwidth&quot;: 0<br>        &#125;,<br>        &quot;GraphDriver&quot;: &#123;<br>            &quot;Name&quot;: &quot;overlay2&quot;,<br>            &quot;Data&quot;: &#123;<br>                &quot;LowerDir&quot;: &quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2-init/diff:/var/lib/docker/overlay2/c929098156597e7fde875733d39d592621785358a02b2476b4fb863e1318348a/diff&quot;,<br>                &quot;MergedDir&quot;: &quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2/merged&quot;,<br>                &quot;UpperDir&quot;: &quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2/diff&quot;,<br>                &quot;WorkDir&quot;: &quot;/var/lib/docker/overlay2/2b3908fb1f57a7f268ee1fe90e8a9b82cc21d53bbe621119b451ed4d37baefb2/work&quot;<br>            &#125;<br>        &#125;,<br>        &quot;Mounts&quot;: [],<br>        &quot;Config&quot;: &#123;<br>            &quot;Hostname&quot;: &quot;b9c6c69111ea&quot;,<br>            &quot;Domainname&quot;: &quot;&quot;,<br>            &quot;User&quot;: &quot;&quot;,<br>            &quot;AttachStdin&quot;: true,<br>            &quot;AttachStdout&quot;: true,<br>            &quot;AttachStderr&quot;: true,<br>            &quot;Tty&quot;: true,<br>            &quot;OpenStdin&quot;: true,<br>            &quot;StdinOnce&quot;: true,<br>            &quot;Env&quot;: [<br>                &quot;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin&quot;<br>            ],<br>            &quot;Cmd&quot;: [<br>                &quot;/bin/bash&quot;<br>            ],<br>            &quot;Image&quot;: &quot;centos&quot;,<br>            &quot;Volumes&quot;: null,<br>            &quot;WorkingDir&quot;: &quot;&quot;,<br>            &quot;Entrypoint&quot;: null,<br>            &quot;OnBuild&quot;: null,<br>            &quot;Labels&quot;: &#123;<br>                &quot;org.label-schema.build-date&quot;: &quot;20210915&quot;,<br>                &quot;org.label-schema.license&quot;: &quot;GPLv2&quot;,<br>                &quot;org.label-schema.name&quot;: &quot;CentOS Base Image&quot;,<br>                &quot;org.label-schema.schema-version&quot;: &quot;1.0&quot;,<br>                &quot;org.label-schema.vendor&quot;: &quot;CentOS&quot;<br>            &#125;<br>        &#125;,<br>        &quot;NetworkSettings&quot;: &#123;<br>            &quot;Bridge&quot;: &quot;&quot;,<br>            &quot;SandboxID&quot;: &quot;96c5a049392ff3080acd7c87435235324bedd58ce9d60d7ae40b7a575d0530fb&quot;,<br>            &quot;HairpinMode&quot;: false,<br>            &quot;LinkLocalIPv6Address&quot;: &quot;&quot;,<br>            &quot;LinkLocalIPv6PrefixLen&quot;: 0,<br>            &quot;Ports&quot;: &#123;&#125;,<br>            &quot;SandboxKey&quot;: &quot;/var/run/docker/netns/96c5a049392f&quot;,<br>            &quot;SecondaryIPAddresses&quot;: null,<br>            &quot;SecondaryIPv6Addresses&quot;: null,<br>            &quot;EndpointID&quot;: &quot;2713bfadd8c713125a5b3c8115158fa5c1f5d9134ad6400351fe72eedc22e500&quot;,<br>            &quot;Gateway&quot;: &quot;172.17.0.1&quot;,<br>            &quot;GlobalIPv6Address&quot;: &quot;&quot;,<br>            &quot;GlobalIPv6PrefixLen&quot;: 0,<br>            &quot;IPAddress&quot;: &quot;172.17.0.2&quot;,<br>            &quot;IPPrefixLen&quot;: 16,<br>            &quot;IPv6Gateway&quot;: &quot;&quot;,<br>            &quot;MacAddress&quot;: &quot;02:42:ac:11:00:02&quot;,<br>            &quot;Networks&quot;: &#123;<br>                &quot;bridge&quot;: &#123;<br>                    &quot;IPAMConfig&quot;: null,<br>                    &quot;Links&quot;: null,<br>                    &quot;Aliases&quot;: null,<br>                    &quot;NetworkID&quot;: &quot;10a22f71f8cdb181a3acf67565fa30a3cadba845ee032ec0e167e8a1d603612b&quot;,<br>                    &quot;EndpointID&quot;: &quot;2713bfadd8c713125a5b3c8115158fa5c1f5d9134ad6400351fe72eedc22e500&quot;,<br>                    &quot;Gateway&quot;: &quot;172.17.0.1&quot;,<br>                    &quot;IPAddress&quot;: &quot;172.17.0.2&quot;,<br>                    &quot;IPPrefixLen&quot;: 16,<br>                    &quot;IPv6Gateway&quot;: &quot;&quot;,<br>                    &quot;GlobalIPv6Address&quot;: &quot;&quot;,<br>                    &quot;GlobalIPv6PrefixLen&quot;: 0,<br>                    &quot;MacAddress&quot;: &quot;02:42:ac:11:00:02&quot;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>]<br><br></code></pre></td></tr></table></figure>
+
+<p><strong>进入当前正在运行的容器</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta">#</span><span class="bash">容器后台运行，需要进入容器，修改一些配置</span><br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">命令</span><br>docker exec -it 容器id bashshell<br><span class="hljs-meta">-----&gt;</span><span class="bash">进入容器后开启一个新的终端</span><br><br>docker attach 容器id<br><span class="hljs-meta">-----&gt;</span><span class="bash">进入容器正在执行的终端，不会启动新的进程</span><br><br></code></pre></td></tr></table></figure>
+
+<p><strong>从容器内拷贝文件到主机上</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs shell">docker cp 容器id:/容器内路径 目的主机路径<br><br>[root@kai kai]# docker run -it centos /bin/bash<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">查看容器当前目录</span><br>[root@3ab96e4a355c /]# ls<br>bin  etc   lib    lost+found  mnt  proc  run   srv  tmp  var<br>dev  home  lib64  media       opt  root  sbin  sys  usr<br>[root@3ab96e4a355c /]# cd home<br>[root@3ab96e4a355c home]# ls<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">创建容器文件</span><br>[root@3ab96e4a355c home]# touch test.py<br>[root@3ab96e4a355c home]# exit<br>exit<br>[root@kai kai]# docker ps -a<br>CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES<br>3ab96e4a355c        centos              &quot;/bin/bash&quot;         40 seconds ago      Exited (0) 6 seconds ago                        vibrant_mclean<br><span class="hljs-meta"></span><br><span class="hljs-meta">#</span><span class="bash">复制，使用复制命令时，不用关心容器是否开启</span><br>[root@kai kai]# docker cp 3ab96e4a355c:/home/test.py ./<br>[root@kai kai]# ls<br>Desktop    Downloads  Pictures  Templates  testcp.txt  Videos<br>Documents  Music      Public    test1.txt  test.py<br><br><br><br></code></pre></td></tr></table></figure>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/not-a-big-deal/">not a big deal</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/study/">study</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/02/13/wp/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">wp</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/13/sql-1/">
+                        <span class="hidden-mobile">sql</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;TOC</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
